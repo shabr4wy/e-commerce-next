@@ -1,6 +1,14 @@
 /** @format */
 
+import Nav from "@/components/Nav";
 import ProductItem from "@/components/Product-item";
+
+export const getCategoriesNames = async () => {
+  const res = await fetch("https://dummyjson.com/products/categories");
+  const categoriesNames = await res.json();
+
+  return categoriesNames;
+};
 
 export const getProducts = async () => {
   const res = await fetch("https://dummyjson.com/products?limit=10");
@@ -11,7 +19,9 @@ export const getProducts = async () => {
 
 export async function getStaticProps() {
   const products = await getProducts();
-  return { props: { products } };
+  const categoriesNames = await getCategoriesNames();
+
+  return { props: { products, categoriesNames } };
 }
 
 export default function Home({ products }) {
