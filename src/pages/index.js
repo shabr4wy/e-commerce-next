@@ -24,14 +24,17 @@ export async function getStaticProps() {
   return { props: { products, categoriesNames } };
 }
 
-export default function Home({ products }) {
+export default function Home({ products, categoriesNames }) {
   return (
-    <main className="main">
-      <ul className="main__home-products">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
-        ))}
-      </ul>
-    </main>
+    <>
+      <Nav categoriesNames={categoriesNames} />
+      <main className="main">
+        <ul className="main__home-products">
+          {products.map((product) => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </ul>
+      </main>
+    </>
   );
 }
