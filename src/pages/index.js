@@ -1,5 +1,7 @@
 /** @format */
 
+import ProductItem from "@/components/Product-item";
+
 export const getProducts = async () => {
   const res = await fetch("https://dummyjson.com/products?limit=10");
   const data = await res.json();
@@ -12,6 +14,14 @@ export async function getStaticProps() {
   return { props: { products } };
 }
 
-export default function Home() {
-  return <h1>Hello World!</h1>;
+export default function Home({ products }) {
+  return (
+    <main className="main">
+      <ul className="main__home-products">
+        {products.map((product) => (
+          <li className="main__product-item">{product.title}</li>
+        ))}
+      </ul>
+    </main>
+  );
 }
