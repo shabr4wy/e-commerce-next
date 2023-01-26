@@ -19,7 +19,7 @@ export default function Home({ products }) {
     <main className="main">
       <ul className="main__home-products">
         {products.map((product) => (
-          <li className="main__product-item">{product.title}</li>
+          <ProductItem key={product.id} product={product} />
         ))}
       </ul>
     </main>
