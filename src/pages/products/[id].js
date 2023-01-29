@@ -1,7 +1,7 @@
 /** @format */
 
 export const getAllProducts = async () => {
-  const res = await fetch("https://dummyjson.com/products");
+  const res = await fetch("https://dummyjson.com/products?limit=100");
   const data = await res.json();
 
   const allProducts = data.products;
