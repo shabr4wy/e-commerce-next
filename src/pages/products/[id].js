@@ -9,6 +9,23 @@ export const getAllProducts = async () => {
   return allProducts;
 };
 
+export const getProductsPaths = (allProducts) => {
+  const paths = allProducts.map((product) => {
+    return {
+      params: { id: product.id.toString() },
+    };
+  });
+
+  return paths;
+};
+
+export async function getStaticPaths() {
+  const allProducts = await getAllProducts();
+  getProductsPaths(allProducts);
+
+  return { paths, fallback: false };
+}
+
 const Product = ({ productData }) => {
   return <h1>{productData.title}</h1>;
 };
