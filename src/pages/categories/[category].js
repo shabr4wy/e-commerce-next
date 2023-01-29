@@ -31,7 +31,7 @@ const getCategoriesProductData = async (context) => {
   );
   const data = await res.json();
 
-  return data;
+  return data.products;
 };
 
 export async function getStaticProps(context) {
