@@ -1,6 +1,7 @@
 /** @format */
 
 import Nav from "@/components/Nav";
+import ProductsList from "@/components/ProductsList";
 
 export const getCategoriesNames = async () => {
   const res = await fetch("https://dummyjson.com/products/categories");
@@ -42,14 +43,10 @@ export async function getStaticProps(context) {
 
 const CategoryProducts = ({ categoriesProductsData, categoriesNames }) => {
   return (
-    <main>
+    <>
       <Nav categoriesNames={categoriesNames} />
-      <ul>
-        {categoriesProductsData?.products.map((product) => (
-          <li key={product.title}>{product.title}</li>
-        ))}
-      </ul>
-    </main>
+      <ProductsList productsData={categoriesProductsData} />
+    </>
   );
 };
 

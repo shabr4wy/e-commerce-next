@@ -1,7 +1,7 @@
 /** @format */
 
 import Nav from "@/components/Nav";
-import ProductItem from "@/components/Product-item";
+import ProductsList from "@/components/ProductsList";
 
 export const getCategoriesNames = async () => {
   const res = await fetch("https://dummyjson.com/products/categories");
@@ -28,13 +28,7 @@ export default function Home({ products, categoriesNames }) {
   return (
     <>
       <Nav categoriesNames={categoriesNames} />
-      <main className="main">
-        <ul className="main__home-products">
-          {products.map((product) => (
-            <ProductItem key={product.id} product={product} />
-          ))}
-        </ul>
-      </main>
+      <ProductsList productsData={products} />
     </>
   );
 }
