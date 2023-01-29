@@ -11,7 +11,7 @@ export const getCategoriesNames = async () => {
 
 export const getCategoriesPaths = (categoriesNames) => {
   const paths = categoriesNames.map((categoryName) => {
-    return { params: { "category-products": categoryName } };
+    return { params: { category: categoryName } };
   });
 
   return paths;
