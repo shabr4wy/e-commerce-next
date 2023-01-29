@@ -21,9 +21,20 @@ export const getProductsPaths = (allProducts) => {
 
 export async function getStaticPaths() {
   const allProducts = await getAllProducts();
-  getProductsPaths(allProducts);
+  const paths = await getProductsPaths(allProducts);
 
   return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch(
+    `https://dummyjson.com/products/${context.params.id}`
+  );
+  const productData = await res.json();
+
+  return {
+    props: { productData },
+  };
 }
 
 const Product = ({ productData }) => {
