@@ -31,6 +31,13 @@ const getCategoriesProductData = async (context) => {
   return data;
 };
 
+export async function getStaticProps(context) {
+  const categoriesProductsData = await getCategoriesProductData(context);
+  const categoriesNames = await getCategoriesNames();
+
+  return { props: { categoriesProductsData, categoriesNames } };
+}
+
 const CategoryProducts = () => {
   return <h1>CategoryProducts</h1>;
 };
