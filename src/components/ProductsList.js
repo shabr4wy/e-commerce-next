@@ -1,14 +1,14 @@
 /** @format */
 
-import Link from "next/link";
+import ProductItem from "./Product-item";
 
 const ProductsList = ({ productsData }) => {
   return (
     <main>
       <ul>
         {productsData?.map((product) => (
-          <li key={product.title}>
-            <Link href={`/products/${product.id}`}>{product.title}</Link>
+          <li key={product.id}>
+            <ProductItem product={product} />
           </li>
         ))}
       </ul>
