@@ -1,5 +1,6 @@
 /** @format */
 
+import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import ProductsList from "@/components/ProductsList";
 
@@ -44,6 +45,7 @@ export async function getStaticProps(context) {
 const CategoryProducts = ({ categoriesProductsData, categoriesNames }) => {
   return (
     <>
+      <Header />
       <Nav categoriesNames={categoriesNames} />
       <ProductsList productsData={categoriesProductsData} />
     </>
