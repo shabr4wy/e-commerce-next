@@ -40,8 +40,12 @@ export async function getStaticProps(context) {
 }
 
 const Product = ({ productData }) => {
-  <Header />;
-  return <h1>{productData.title}</h1>;
+  return (
+    <>
+      <Header />
+      <h2>{productData.title}</h2>
+    </>
+  );
 };
 
 export default Product;
