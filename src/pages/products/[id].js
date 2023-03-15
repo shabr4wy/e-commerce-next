@@ -1,6 +1,7 @@
 /** @format */
 
 import Header from "@/components/Header";
+import ProductPage from "@/components/Product-page";
 
 export const getAllProducts = async () => {
   const res = await fetch("https://dummyjson.com/products?limit=100");
@@ -43,7 +44,7 @@ const Product = ({ productData }) => {
   return (
     <>
       <Header />
-      <h2>{productData.title}</h2>
+      <ProductPage productData={productData} />
     </>
   );
 };
