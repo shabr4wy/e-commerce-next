@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
       </Link>
 
       <Link href={`/products/${product?.id}`}>
-        <div>{product?.price}</div>
+        <div>{"$" + product?.price}</div>
       </Link>
     </article>
   );
