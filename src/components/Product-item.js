@@ -1,5 +1,4 @@
 /** @format */
-import Image from "next/image";
 import Link from "next/link";
 
 const ProductItem = ({ product }) => {
@@ -7,11 +6,10 @@ const ProductItem = ({ product }) => {
     <article>
       <Link href={`/products/${product?.id}`}>
         <div>
-          <Image
+          <img
             src={product?.thumbnail}
             alt={product?.description}
-            width={400}
-            height={268}
+            loading="lazy"
           />
         </div>
       </Link>
