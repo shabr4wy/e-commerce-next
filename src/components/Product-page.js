@@ -2,7 +2,7 @@
 
 const ProductPage = ({ productData }) => {
   return (
-    <main className="product">
+    <main className="product__page">
       <section className="product__images">
         {productData?.images?.map((image) => (
           // eslint-disable-next-line @next/next/no-img-element
