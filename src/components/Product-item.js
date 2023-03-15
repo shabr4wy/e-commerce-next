@@ -6,11 +6,14 @@ const ProductItem = ({ product }) => {
     <article>
       <Link href={`/products/${product?.id}`}>
         <div>
-          <img
-            src={product?.thumbnail}
-            alt={product?.description}
-            loading="lazy"
-          />
+          {
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={product?.thumbnail}
+              alt={product?.description}
+              loading="lazy"
+            />
+          }
         </div>
       </Link>
 
