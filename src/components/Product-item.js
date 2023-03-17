@@ -1,5 +1,6 @@
 /** @format */
 import Link from "next/link";
+import Rating from "./Rating";
 
 const ProductItem = ({ product }) => {
   return (
@@ -21,6 +22,10 @@ const ProductItem = ({ product }) => {
         <Link href={`/products/${product?.id}`}>
           <h3>{product?.title}</h3>
         </Link>
+      </section>
+
+      <section className="item__rating">
+        <Rating product={product} />
       </section>
 
       <section className="item__price">

@@ -1,5 +1,7 @@
 /** @format */
 
+import Rating from "./Rating";
+
 const ProductPage = ({ productData }) => {
   return (
     <main className="product__page">
@@ -12,6 +14,10 @@ const ProductPage = ({ productData }) => {
 
       <section className="product__title">
         <h3>{productData?.title}</h3>
+      </section>
+
+      <section className="product__rating">
+        <Rating product={productData} />
       </section>
 
       <section className="product__description">
