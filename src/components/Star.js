@@ -1,13 +1,13 @@
 /** @format */
 
-const Star = ({ isCompleteStar, fillColor, productTitle, StopOffset }) => {
+const Star = ({ isCompleteStar, productTitle, StopOffset }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       stroke="brown"
       strokeWidth="5px"
       height={20}
-      fill={isCompleteStar ? fillColor : `url(${"#" + productTitle})`}
+      fill={isCompleteStar ? "#FFB80E" : `url(${"#" + productTitle})`}
       width={20}
       viewBox="0 0 576 512"
     >
