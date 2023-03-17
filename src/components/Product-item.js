@@ -4,7 +4,7 @@ import Rating from "./Rating";
 
 const ProductItem = ({ product }) => {
   return (
-    <article className="product__item">
+    <article className="item">
       <section className="item__images">
         <Link href={`/products/${product?.id}`}>
           {
@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
       </section>
 
       <section>
-        <button className="product__addToCartBtn">Add to cart</button>
+        <button className="item__addToCartBtn">Add to cart</button>
       </section>
     </article>
   );

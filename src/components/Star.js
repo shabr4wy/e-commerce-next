@@ -3,6 +3,7 @@
 const Star = ({ isCompleteStar, productTitle, StopOffset }) => {
   return (
     <svg
+      className="star"
       xmlns="http://www.w3.org/2000/svg"
       stroke="brown"
       strokeWidth="15px"

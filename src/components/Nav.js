@@ -7,8 +7,13 @@ const Nav = ({ categoriesNames }) => {
     <nav className="nav">
       <ul>
         {categoriesNames?.map((categoryName) => (
-          <li key={categoryName}>
-            <Link href={`/categories/${categoryName}`}>{categoryName}</Link>
+          <li className="Nav__categotryName" key={categoryName}>
+            <Link
+              className="Nav__categotryName__link"
+              href={`/categories/${categoryName}`}
+            >
+              {categoryName}
+            </Link>
           </li>
         ))}
       </ul>
