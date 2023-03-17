@@ -16,6 +16,8 @@ const ProductPage = ({ productData }) => {
         <h3>{productData?.title}</h3>
       </section>
 
+      <section>Brand: {productData?.brand}</section>
+
       <section className="product__rating">
         <Rating product={productData} />
       </section>
