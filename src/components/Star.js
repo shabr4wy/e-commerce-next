@@ -5,7 +5,7 @@ const Star = ({ isCompleteStar, productTitle, StopOffset }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       stroke="brown"
-      strokeWidth="5px"
+      strokeWidth="15px"
       height={20}
       fill={isCompleteStar ? "#FFB80E" : `url(${"#" + productTitle})`}
       width={20}
