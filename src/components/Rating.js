@@ -20,7 +20,7 @@ const Rating = ({ product }) => {
 
   return allStarsNum.map((star) =>
     rating >= star ? (
-      <Star isCompleteStar={true} fillColor="#FFD700" key={star} />
+      <Star isCompleteStar={true} fillColor="#FFB80E" key={star} />
     ) : star - rating < 1 ? (
       <Star
         // product title is passed to give unique id for svg gradient.

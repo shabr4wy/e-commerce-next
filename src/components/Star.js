@@ -15,8 +15,8 @@ const Star = ({ isCompleteStar, fillColor, productTitle, StopOffset }) => {
         <defs>
           <linearGradient id={productTitle}>
             {/* I created two identical stops to produce hard stops of color gradient */}
-            <stop offset="0" stopColor="#FFD700" />
-            <stop offset={StopOffset} stopColor="#FFD700" />
+            <stop offset="0" stopColor="#FFB80E" />
+            <stop offset={StopOffset} stopColor="#FFB80E" />
             <stop offset={StopOffset} stopColor="white" />
             <stop offset="100%" stopColor="white" />
           </linearGradient>
