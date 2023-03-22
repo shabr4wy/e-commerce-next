@@ -1,5 +1,6 @@
 /** @format */
 import Link from "next/link";
+import AddToCart from "./AddToCart";
 import Rating from "./Rating";
 
 const ProductItem = ({ product }) => {
@@ -34,9 +35,7 @@ const ProductItem = ({ product }) => {
         </Link>
       </section>
 
-      <section>
-        <button className="item__addToCartBtn">Add to cart</button>
-      </section>
+      <AddToCart />
     </article>
   );
 };

@@ -1,5 +1,6 @@
 /** @format */
 
+import AddToCart from "./AddToCart";
 import Rating from "./Rating";
 
 const ProductPage = ({ productData }) => {
@@ -54,9 +55,7 @@ const ProductPage = ({ productData }) => {
         </button>
       </section>
 
-      <section>
-        <button className="product__addToCartBtn">Add to cart</button>
-      </section>
+      <AddToCart />
     </main>
   );
 };
