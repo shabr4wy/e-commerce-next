@@ -3,7 +3,7 @@ import Link from "next/link";
 import AddToCart from "./AddToCart";
 import Rating from "./Rating";
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, updateCart }) => {
   return (
     <article className="item">
       <section className="item__images">
@@ -35,7 +35,7 @@ const ProductItem = ({ product }) => {
         </Link>
       </section>
 
-      <AddToCart />
+      <AddToCart product={product} updateCart={updateCart} />
     </article>
   );
 };

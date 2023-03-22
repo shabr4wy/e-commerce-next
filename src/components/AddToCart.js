@@ -1,9 +1,15 @@
 /** @format */
 
-const AddToCart = () => {
+const AddToCart = ({ product, updateCart }) => {
+  const handleClick = () => {
+    updateCart({ ...product, itemsBeingPurshased: "1" });
+  };
+
   return (
     <section>
-      <button className="product__addToCartBtn">Add to cart</button>
+      <button className="product__addToCartBtn" onClick={() => handleClick()}>
+        Add to cart
+      </button>
     </section>
   );
 };

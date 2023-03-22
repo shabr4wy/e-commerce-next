@@ -2,13 +2,13 @@
 
 import ProductItem from "./Product-item";
 
-const ProductsList = ({ productsData }) => {
+const ProductsList = ({ productsData, updateCart }) => {
   return (
     <main>
       <ul className="products__items">
         {productsData?.map((product) => (
           <li key={product.id}>
-            <ProductItem product={product} />
+            <ProductItem product={product} updateCart={updateCart} />
           </li>
         ))}
       </ul>
