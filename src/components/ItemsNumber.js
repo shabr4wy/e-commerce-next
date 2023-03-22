@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-const ItemsNumbers = () => {
-  const [itemsNumber, setItemsNumber] = useState(0);
-
+const ItemsNumbers = ({ itemsNumber, setItemsNumber }) => {
   const handleChange = (e) => {
     setItemsNumber(e.target.value);
   };
