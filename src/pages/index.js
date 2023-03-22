@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import ProductsList from "@/components/ProductsList";
+import { useState } from "react";
 
 export const getCategoriesNames = async () => {
   const res = await fetch("https://dummyjson.com/products/categories");
@@ -26,11 +27,17 @@ export async function getStaticProps() {
 }
 
 export default function Home({ products, categoriesNames }) {
+  const [cart, setCart] = useState("");
+
+  const updateCart = (newProduct) => {
+    setCart([...cart, newProduct]);
+  };
+
   return (
     <>
       <Header />
       <Nav categoriesNames={categoriesNames} />
-      <ProductsList productsData={products} />
+      <ProductsList productsData={products} updateCart={updateCart} />
     </>
   );
 }
