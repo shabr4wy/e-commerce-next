@@ -37,7 +37,7 @@ const ProductPage = ({ productData }) => {
 
       <ItemsNumbers itemsNumber={itemsNumber} setItemsNumber={setItemsNumber} />
 
-      <AddToCart />
+      <AddToCart product={productData} itemsNumber={itemsNumber} />
     </main>
   );
 };

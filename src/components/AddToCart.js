@@ -3,11 +3,13 @@
 import { useContext } from "react";
 import { CartContext } from "@/pages/_app";
 
-const AddToCart = ({ product }) => {
+const AddToCart = ({ product, itemsNumber }) => {
   const { updateCart } = useContext(CartContext);
 
   const handleClick = () => {
-    updateCart({ ...product, itemsBeingPurshased: "1" });
+    itemsNumber
+      ? updateCart({ ...product, itemsBeingPurshased: itemsNumber })
+      : updateCart({ ...product, itemsBeingPurshased: "1" });
   };
 
   return (

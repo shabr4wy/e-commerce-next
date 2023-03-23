@@ -6,6 +6,7 @@ export const CartContext = createContext([]);
 
 export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
+  console.log(cart);
 
   const updateCart = useCallback(
     (newProduct) => {
