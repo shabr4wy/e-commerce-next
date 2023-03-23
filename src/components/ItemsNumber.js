@@ -3,11 +3,13 @@
 import { useContext } from "react";
 import { ItemsNumberContext } from "@/pages/_app";
 
-const ItemsNumber = () => {
+const ItemsNumber = ({ product }) => {
   const { itemsNumber, setItemsNumber } = useContext(ItemsNumberContext);
 
   const handleChange = (e) => {
-    setItemsNumber(e.target.value);
+    setItemsNumber(
+      e.target.value <= product.stock ? e.target.value : product.stock
+    );
   };
 
   const increaseItems = () => {
@@ -36,6 +38,7 @@ const ItemsNumber = () => {
           id="productQuantity"
           name="productQuantity"
           min={1}
+          max={product.stock}
           onChange={(e) => handleChange(e)}
           value={itemsNumber}
         ></input>
