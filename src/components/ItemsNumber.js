@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { ItemsNumberContext } from "@/pages/_app";
 
-const ItemsNumbers = () => {
+const ItemsNumber = () => {
   const { itemsNumber, setItemsNumber } = useContext(ItemsNumberContext);
 
   const handleChange = (e) => {
@@ -35,6 +35,7 @@ const ItemsNumbers = () => {
           type="number"
           id="productQuantity"
           name="productQuantity"
+          min={1}
           onChange={(e) => handleChange(e)}
           value={itemsNumber}
         ></input>
@@ -51,4 +52,4 @@ const ItemsNumbers = () => {
   );
 };
 
-export default ItemsNumbers;
+export default ItemsNumber;

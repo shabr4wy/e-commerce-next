@@ -1,7 +1,7 @@
 /** @format */
 
 import AddToCart from "./AddToCart";
-import ItemsNumbers from "./itemsNumber";
+import ItemsNumber from "./ItemsNumber";
 import Rating from "./Rating";
 
 const ProductPage = ({ productData }) => {
@@ -32,7 +32,7 @@ const ProductPage = ({ productData }) => {
         <span>{"$" + productData?.price}</span>
       </section>
 
-      <ItemsNumbers />
+      <ItemsNumber />
 
       <AddToCart product={productData} />
     </main>
