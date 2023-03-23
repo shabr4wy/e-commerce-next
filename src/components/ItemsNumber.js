@@ -15,7 +15,7 @@ const ItemsNumber = () => {
   };
 
   const decreaseItems = () => {
-    itemsNumber > 0 && setItemsNumber((itemsNumber) => itemsNumber - 1);
+    itemsNumber > 1 && setItemsNumber((itemsNumber) => itemsNumber - 1);
   };
 
   return (
