@@ -1,13 +1,10 @@
 /** @format */
 
-import { useState } from "react";
 import AddToCart from "./AddToCart";
 import ItemsNumbers from "./itemsNumber";
 import Rating from "./Rating";
 
 const ProductPage = ({ productData }) => {
-  const [itemsNumber, setItemsNumber] = useState(0);
-
   return (
     <main className="product__page">
       <section className="product__images">
@@ -35,9 +32,9 @@ const ProductPage = ({ productData }) => {
         <span>{"$" + productData?.price}</span>
       </section>
 
-      <ItemsNumbers itemsNumber={itemsNumber} setItemsNumber={setItemsNumber} />
+      <ItemsNumbers />
 
-      <AddToCart product={productData} itemsNumber={itemsNumber} />
+      <AddToCart product={productData} />
     </main>
   );
 };

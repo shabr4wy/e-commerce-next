@@ -1,8 +1,11 @@
 /** @format */
 
-import { useState } from "react";
+import { useContext } from "react";
+import { ItemsNumberContext } from "@/pages/_app";
 
-const ItemsNumbers = ({ itemsNumber, setItemsNumber }) => {
+const ItemsNumbers = () => {
+  const { itemsNumber, setItemsNumber } = useContext(ItemsNumberContext);
+
   const handleChange = (e) => {
     setItemsNumber(e.target.value);
   };

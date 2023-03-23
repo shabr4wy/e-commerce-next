@@ -1,15 +1,14 @@
 /** @format */
 
 import { useContext } from "react";
-import { CartContext } from "@/pages/_app";
+import { CartContext, ItemsNumberContext } from "@/pages/_app";
 
-const AddToCart = ({ product, itemsNumber }) => {
+const AddToCart = ({ product }) => {
   const { updateCart } = useContext(CartContext);
+  const { itemsNumber } = useContext(ItemsNumberContext);
 
   const handleClick = () => {
-    itemsNumber
-      ? updateCart({ ...product, itemsBeingPurshased: itemsNumber })
-      : updateCart({ ...product, itemsBeingPurshased: "1" });
+    updateCart({ ...product, itemsBeingPurshased: itemsNumber });
   };
 
   return (
