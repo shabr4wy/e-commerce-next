@@ -1,6 +1,11 @@
 /** @format */
 
-const AddToCart = ({ product, updateCart }) => {
+import { useContext } from "react";
+import { CartContext } from "@/pages/_app";
+
+const AddToCart = ({ product }) => {
+  const { updateCart } = useContext(CartContext);
+
   const handleClick = () => {
     updateCart({ ...product, itemsBeingPurshased: "1" });
   };
