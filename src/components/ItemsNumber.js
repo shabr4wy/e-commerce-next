@@ -13,7 +13,7 @@ const ItemsNumber = ({ product }) => {
   };
 
   const increaseItems = () => {
-    setItemsNumber((itemsNumber) => itemsNumber + 1);
+    setItemsNumber((itemsNumber) => Number(itemsNumber) + 1);
   };
 
   const decreaseItems = () => {
