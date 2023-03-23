@@ -3,10 +3,11 @@
 import { createContext, useCallback, useState } from "react";
 
 export const CartContext = createContext([]);
+export const ItemsNumberContext = createContext(1);
 
 export default function App({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
-  console.log(cart);
+  const [itemsNumber, setItemsNumber] = useState(1);
 
   const updateCart = useCallback(
     (newProduct) => {
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <CartContext.Provider value={{ cart, updateCart }}>
-      <Component {...pageProps} />
+      <ItemsNumberContext.Provider value={{ itemsNumber, setItemsNumber }}>
+        <Component {...pageProps} />
+      </ItemsNumberContext.Provider>
     </CartContext.Provider>
   );
 }
