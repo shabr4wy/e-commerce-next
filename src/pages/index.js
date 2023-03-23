@@ -37,7 +37,7 @@ export default function Home({ products, categoriesNames }) {
     <>
       <Header />
       <Nav categoriesNames={categoriesNames} />
-      <ProductsList productsData={products} updateCart={updateCart} />
+      <ProductsList productsData={products} />
     </>
   );
 }
