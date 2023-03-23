@@ -32,7 +32,7 @@ const ProductPage = ({ productData }) => {
         <span>{"$" + productData?.price}</span>
       </section>
 
-      <ItemsNumber />
+      <ItemsNumber product={productData} />
 
       <AddToCart product={productData} />
     </main>
