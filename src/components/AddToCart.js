@@ -4,11 +4,21 @@ import { useContext } from "react";
 import { CartContext, ItemsNumberContext } from "@/pages/_app";
 
 const AddToCart = ({ product }) => {
-  const { updateCart } = useContext(CartContext);
+  const { cart, updateCart } = useContext(CartContext);
   const { itemsNumber } = useContext(ItemsNumberContext);
 
+  const check_If_Product_exists = () => {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == product.id) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   const handleClick = () => {
-    updateCart({ ...product, itemsBeingPurshased: itemsNumber });
+    !check_If_Product_exists() &&
+      updateCart({ ...product, itemsBeingPurshased: itemsNumber });
   };
 
   return (
