@@ -8,3 +8,7 @@ export const get_Cart_Form_Local_storage = () => {
     cart_From_Local_Sotrage = JSON.parse(window.localStorage.getItem("cart"));
   }
 };
+
+export function add_Item_to_Cart_In_Local_Storage(cart) {
+  cart.length != 0 && window.localStorage.setItem("cart", JSON.stringify(cart));
+}
