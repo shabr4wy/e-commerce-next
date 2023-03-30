@@ -35,6 +35,11 @@ const CartPage = () => {
               0
             )}
           </section>
+
+          <section className="cart__proceedToBuy">
+            {" "}
+            <a href="">Proceed to Buy</a>
+          </section>
         </>
       </main>
     </>
