@@ -1,5 +1,7 @@
 /** @format */
 
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="header">
@@ -8,7 +10,7 @@ const Header = () => {
       </div>
 
       <div className="header__cart">
-        <a>Cart</a>
+        <Link href={`/CartPage`}>Cart</Link>
       </div>
 
       <div className="header__signIn">
