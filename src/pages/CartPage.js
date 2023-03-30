@@ -2,16 +2,34 @@
 
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
+import Link from "next/link";
+import { CartContext } from "./_app";
 
 const { useContext } = require("react");
 
 const CartPage = () => {
+  const { cart } = useContext(CartContext);
+
   return (
     <>
       <Header />
       <Nav />
       <main className="cart">
-        <div>Your cart is empty</div>
+        <>
+          <section className="cart__Products">
+            {cart.map((product) => (
+              <>
+                <h3>{product.title}</h3>
+                <div>{product.itemsBeingPurshased}</div>
+                <div>{product.price}</div>
+              </>
+            ))}
+          </section>
+
+          <section className="cart__proceedToBuy">
+            <a href="">Proceed to Buy</a>
+          </section>
+        </>
       </main>
     </>
   );
