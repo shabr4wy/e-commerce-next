@@ -26,8 +26,14 @@ const CartPage = () => {
             ))}
           </section>
 
-          <section className="cart__proceedToBuy">
-            <a href="">Proceed to Buy</a>
+          <section className="cart__total price">
+            Total price: $
+            {cart.reduce(
+              (prevValue, currValue) =>
+                prevValue +
+                Number(currValue.price) * Number(currValue.itemsBeingPurshased),
+              0
+            )}
           </section>
         </>
       </main>
